@@ -6,7 +6,8 @@
       "Bash(git push:*)",
       "Bash(xcopy:*)",
       "Bash(robocopy:*)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
