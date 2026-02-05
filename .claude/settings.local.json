@@ -7,7 +7,10 @@
       "Bash(xcopy:*)",
       "Bash(robocopy:*)",
       "Bash(powershell:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(git stash pop:*)"
     ]
   }
 }

@@ -39,15 +39,17 @@ VS Code 是推荐的代码编辑器，轻量、免费、功能强大。
 
 ### 遇到问题怎么办
 
-| 工具 | 链接 | 说明 |
-|-----|------|------|
-| Google AiStudio | https://aistudio.google.com/ | Google AI 助手 |
-| 腾讯元宝 | https://yuanbao.tencent.com/ | 腾讯 AI 助手 |
+**第一步：先自己尝试解决**
+- 看报错信息，检查代码
+- 用 AI 工具帮忙排查
 
-**提问技巧**：
-- 把代码和报错信息一起发给 AI
-- 描述清楚你想做什么、遇到了什么问题
-- AI 给出的答案要自己验证理解
+**第二步：30 分钟解决不了**
+- 先放一边，做别的
+- 问我
+
+**可用工具**：
+- Google AiStudio：https://aistudio.google.com/
+- 腾讯元宝：https://yuanbao.tencent.com/
 
 ---
 
