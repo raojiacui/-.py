@@ -15,16 +15,16 @@
 # 参数 l(注意，这里是字母 l，不是数字 1) 是正方行边长
 # 函数声明如下
 # square(x, y, l)
-from pixfog import*
-def square(x,y,i):
-     jump(x,y)
-     j=0
-     while j <4:
-         forward(i)
-         right(90)
-         j=j+1
-square(0,0,100)
-pause()
+# from pixfog import*
+# def square(x,y,i):
+#      jump(x,y)
+#      j=0
+#      while j <4:
+#          forward(i)
+#          right(90)
+#          j=j+1
+# square(0,0,100)
+# pause()
 
 # 2
 # 实现函数, 用于画一个矩形, 长宽由参数提供
@@ -50,20 +50,23 @@ pause()
 # 从 0 0 点开始(, 边长为 30, 正方形之间间隔为 0
 # 函数声明如下
 # square5()
-from pixfog import*
-def square5(x,y,i):
-     jump(x,y)
-     i=0
-     while i<5:
-         j=0
-         while j<4:
-          forward(30)
-          right(90)
-          j=j+1
-     jump(x+30*i,y)
-     i=i+1
-square5(0,0,5)
-pause()
+# from pixfog import*
+# def square5(x,y,i):
+#      jump(x,y)
+#      i=0
+#      while i<5:
+#          j=0
+#          while j<4:
+#           forward(30)
+#           right(90)
+#           j=j+1
+#           i=i+1
+# square5(0,0,30)
+# square5(30,0,30)
+# square5(60,0,30)
+# square5(90,0,30)
+# square5(120,0,30)
+# pause()
 
 # 4
 # 画一排正方形, 一共 5 个
@@ -71,18 +74,21 @@ pause()
 # 函数声明如下
 # square5_10()
 # from pixfog import*
-# def square5_10(x,y,n,space,len):
-#     jump(x,y)
-#     i=0
-#     while i<5:
-#         j=0
-#         while j<4:
-#             forward(30)
-#             right(90)
-#             j=j+1
-#         jump(x+(len+space)*(i+1),y)    
-#         i=i+1
-# square5_10(0,0,5,10,30)
+# def square5_10(x,y,space,len):
+#      jump(x,y)
+#      i=0
+#      while i<5:
+#          j=0
+#          while j<4:
+#              forward(30)
+#              right(90)
+#              j=j+1   
+#          i=i+1
+# square5_10(0,0,10,30)
+# square5_10(40,0,10,30)
+# square5_10(80,0,10,30)
+# square5_10(120,0,10,30)
+# square5_10(160,0,10,30)
 # pause()
 
 # 5
@@ -93,19 +99,26 @@ pause()
 # len 是正方形的边长
 # square_line(x, y, n, space, len)
 # from pixfog import*
-# def square_line(x,y,space,len):
-#     jump(0,0)
+# def square(x,y,n,space,len):
+#     jump(x,y)
 #     i=0
-#     while True:
+#     while i<n:
 #         j=0
 #         while j<4:
-#             forward(len)
+#             forward(30)
 #             right(90)
 #             j=j+1
-#         jump(x+(len+space)*(i+1),y)
 #         i=i+1
-# square_line(0,0,10,100)
-# pause()
+#         n=n+1
+#         jump(x+(len+space)*i,y)
+# square(0,0,5,10,30)
+# square(40,0,5,10,30)
+# square(80,0,5,10,30)
+# square(120,0,5,10,30)
+# square(160,0,5,10,30)
+# pause()       
+        
+
 
 # 6
 # 实现函数, 用上题的函数来画一个正方形方阵, 参数如下
@@ -115,23 +128,26 @@ pause()
 # n 是横向正方形的个数
 # m 是纵向正方形的个数
 # square_square(x, y, space, len, n, m)
-# from pixfog import*
-# def square_line(x,y,space,len):
-#      n=0
-#      while True:
-#          m=0
-#          while True:
-#              jump(x+(len+space)*n,y+(len+space)*m)
-#              j=0
-#              while j<4:
-#                  forward(30)
-#                  right(90)
-#                  j=j+1
-#              m=m+1
-#              n=n+1
-         
-# square_line(0,0,10,30)
-# pause()
+from pixfog import*
+def square(x,y,space,len,n,m):
+      jump(x,y)
+      i=0
+      while i<4:
+          k=0
+          while k<4:
+              j=0
+              while j<4:
+                  forward(30)
+                  right(90)
+                  j=j+1
+                  k=k+1
+              i=i+1
+              jump(x+(len+space)*(i+1),y)
+square(0,0,10,30,4,4)
+square(0,-40,10,30,4,4)
+square(0,-80,10,30,4,4)
+square(0,-120,10,30,4,4)
+pause()
 
 # 7
 # 实现函数, 画一排矩形, 有如下参数
@@ -167,24 +183,25 @@ pause()
 # rect_square(x, y, space, w, h, n, m)
 # from pixfog import*
 # def rect_line(x,y,w,h,space):
-#      jump(0,0)
-#      i=0
-#      n=0
-#      while True:
-#          m=0
-#          while True:
-#              j=0
-#              while j<4:
-#               forward(w)
-#               right(90)
-#               forward(h)
-#               right(90)
-#               j=j+1
-#              jump(x+(w+space)*(i+1),y+(h+space*(i+1)))
-#              m=m+1
-#              n=n+1
-#              i=i+1
+#       jump(x,y)
+#       i=0
+#       while i<4:
+#           k=0
+#           while k<4:
+#               j=0
+#               while j<2:
+#                forward(100)
+#                right(90)
+#                forward(50)
+#                right(90)
+#                j=j+1
+#               jump(x+(w+space)*(i+1),y)
+#               k=k+1
+#           i=i+1
 # rect_line(0,0,100,50,10)
+# rect_line(0,-60,100,50,10)
+# rect_line(0,-120,100,50,10)
+# rect_line(0,-180,100,50,10)
 # pause()
 
 # 9
@@ -194,18 +211,17 @@ pause()
 # l 是边长
 # polygon(x, y, n, l)
 # from pixfog import*
-# def polygon(x,y,i):
-#     jump(0,0)
-#     nzjc = (n - 2) * 180 / n
-#     degree = 180 - nzjc
-#     i=0
-#     n=0
-#     while i<n:
-#         forward(i)
-#         right(degree)
-#         i=i+1
-#     n=n+1
-# polygon(0,0,100)
+# def polygon(x,y,n,i):
+#      jump(x,y)
+#      i=0
+#      while i<n:
+#          j=0
+#          while j<6:
+#           forward(100)
+#           right(60)
+#           j=j+1
+#          i=i+1     
+# polygon(0,0,6,100)
 # pause()
 
 
