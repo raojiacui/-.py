@@ -442,58 +442,59 @@ def northkorea():
     wujcxy(circle_x, circle_y, circle_radius * 0.6)
 
 
-# ==================== 测试代码 ====================
+# ==================== 主程序入口 ====================
 
-# 取消注释来测试各个函数
 
-# 测试第1题 - 圆形
-# circle(0, 0, 50)
-# pause()
+def main():
+    """
+    作业2主函数 - 选择要测试的功能
+    取消注释想要测试的内容即可
+    """
 
-# 测试第2题 - 中心矩形
-# center_rect(0, 0, 100, 50)
-# pause()
+    # 测试第1题 - 圆形
+    # circle(0, 0, 50)
+    # pause()
 
-# 测试第3题 - 正五角星(顶部横边左边点)
-# vgwujcxy(0, 0, 100)
-# pause()
+    # 测试第2题 - 中心矩形
+    # center_rect(0, 0, 100, 50)
+    # pause()
 
-# 测试第4题 - 日本国旗
-japan()
-pause()
+    # 测试第3题 - 正五角星(顶部横边左边点)
+    # vgwujcxy(0, 0, 100)
+    # pause()
 
-# 测试第5题 - 五角星(中心点坐标)
-# wujcxy(0, 0, 50)
-# pause()
+    # 测试第4题 - 日本国旗
+    japan()
+    pause()
 
-# 测试第6题 - 中国国旗
-# china()
-# pause()
+    # 测试第5题 - 五角星(中心点坐标)
+    # wujcxy(0, 0, 50)
+    # pause()
 
-# 测试第7题 - 法国国旗
-# france()
-# pause()
+    # 测试第6题 - 中国国旗
+    # china()
+    # pause()
 
-# 测试第8题 - 德国国旗
-# germany()
-# pause()
+    # 测试第7题 - 法国国旗
+    # france()
+    # pause()
 
-# 测试第4题 - 日本国旗
-# japan()
-# pause()
+    # 测试第8题 - 德国国旗
+    # germany()
+    # pause()
 
-# 测试第6题 - 中国国旗
-# china()
-# pause()
+    # 测试第9题 - 冈比亚国旗
+    # gambia()
+    # pause()
 
-# 测试第9题 - 冈比亚国旗
-gambia()
-pause()
+    # 测试第10题 - 瑞士国旗
+    # switzerland()
+    # pause()
 
-# 测试第10题 - 瑞士国旗
-# switzerland()
-# pause()
+    # 测试第11题 - 朝鲜国旗
+    # northkorea()
+    # pause()
 
-# 测试第11题 - 朝鲜国旗
-# northkorea()
-# pause()
+
+if __name__ == "__main__":
+    main()

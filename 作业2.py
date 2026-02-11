@@ -240,6 +240,62 @@ def northkorea():
      wujcxy(x2,0,25)
 northkorea()
 pause()
-     
 
-      
+
+# ============= 格式化错误梳理 =============
+# 根据板书2的代码格式化规则检查
+
+# 规则3: 运算符的左右各加一个空格
+# 第 63 行: x1=x+w/2  →  应该 x1 = x + w / 2
+# 第 64 行: y1=y+h/2  →  应该 y1 = y + h / 2
+# 第 86 行: i=0  →  应该 i = 0
+# 第 87 行: i<5  →  应该 i < 5
+# 第 89 行: i=i+1  →  应该 i = i + 1
+# 第 114 行: r=h/5  →  应该 r = h / 5
+# 第 132 行: j=0  →  应该 j = 0
+# 第 133 行: j<5  →  应该 j < 5
+# 第 135 行: j=j+1  →  应该 j = j + 1
+# 第 167 行: h1=h/3  →  应该 h1 = h / 3
+# 第 168 行: y1=h/2  →  应该 y1 = h / 2
+# 第 169 行: y2=h/2-h1  →  应该 y2 = h / 2 - h1
+# 第 170 行: y3=h/2-h1*2  →  应该 y3 = h / 2 - h1 * 2
+# 第 171 行: x1=-w/2  →  应该 x1 = -w / 2
+# 第 183-190 行: 多处赋值语句缺少空格
+
+# 规则4: 逗号前无空格，后面 1 个空格
+# 第 23 行: import*  →  应该 import *
+# 第 43 行: def circle(x, y,r):  →  应该 def circle(x, y, r):
+# 第 44 行: jump(x,y)  →  应该 jump(x, y)
+# 第 63 行: def center_rect(x,y,w,h):  →  应该 def center_rect(x, y, w, h)
+# 第 67 行: def rect(x,y,w,h):  →  应该 def rect(x, y, w, h)
+# 第 68 行: jump(x,y)  →  应该 jump(x, y)
+# 第 85 行: def vgwujcxy(x,y,len):  →  应该 def vgwujcxy(x, y, length):
+# 第 112 行: def wujcxy(x,y,r):  →  应该 def wujcxy(x, y, r):
+# 第 119 行: vgwujcxy(x1,y1,len)  →  应该 vgwujcxy(x1, y1, length)
+# 第 134 行: jump(j*100,0)  →  应该 jump(j * 100, 0)
+# 第 135 行: vgwujcxy(j*100,0,50)  →  应该 vgwujcxy(j * 100, 0, 50)
+# 第 138 行: rect(0,0,300,200)  →  应该 rect(0, 0, 300, 200)
+# 第 152-156 行: 函数调用中逗号后缺少空格
+
+# 规则2: 函数之间空两行
+# 第 26 行: left() 和 sin() 之间只空了1行（应该空2行）
+# 第 29-30 行: sin() 和 cos() 之间只空了1行（应该空2行）
+# 第 56 行: circle() 和 rect() 之间应该空2行
+# 第 76 行: rect() 和 vgwujcxy() 之间应该空2行
+# 第 92 行: vgwujcxy() 和 japan() 之间应该空2行
+# 第 121 行: wujcxy() 调用和 China() 之间应该空2行
+# 第 139-142 行: China() 和 France() 之间应该空2行
+# 第 158-160 行: France() 和 Germany() 之间应该空2行
+# 第 176-178 行: Germany() 和 gambia() 之间应该空2行
+# 第 198-200 行: gambia() 和 switZerland() 之间应该空2行
+# 第 215-217 行: switZerland() 和 northkorea() 之间应该空2行
+
+# 规则1: 每行只写一条语句
+# 第 207-210 行: 注释混在代码中，导致语法错误
+#   "x1=x-w/2 在作业2中定义的"  →  应该 # x1=x-w/2 在作业2中定义的
+#   "y1=y+h/2       1"  →  应该 # y1=y+h/2
+
+# 规则7: 函数、列表左括号前无空格，所有右括号前无空格
+# 第 23 行: import*  →  应该 import * (右括号前无空格)
+
+
