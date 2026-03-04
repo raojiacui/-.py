@@ -1,0 +1,265 @@
+def log(*args, **kwargs):
+    print(*args, **kwargs)
+
+
+def ensure(condition, message):
+    if not condition:
+        log('*** 测试失败:', message)
+
+
+#作业1
+def n_char(n):
+    return '0' * n
+
+
+def zfill(n, width):
+    s = str(n)
+    length = len(s)
+    if length >= width:
+        return s
+    zeros_needed = width - length
+    return n_char(zeros_needed) + s
+
+
+# 测试函数
+def test_zfill():
+    ensure(zfill(1, 4) == '0001', 'zfill 测试 1')
+    ensure(zfill(23, 4) == '0023', 'zfill 测试 2')
+    ensure(zfill(12345, 4) == '12345', 'zfill 测试 3')
+    ensure(zfill(169, 5) == '00169', 'zfill 测试 4')
+
+
+#作业2
+def n_char(n, char = '0'):
+    return char * n
+
+
+def rjust(s, width, fillchar=' '):
+    length = len(s)
+    if length >= width:
+        return s
+    fill_len = width - length
+    return n_char(fill_len, fillchar) + s
+
+
+# 测试函数
+def test_rjust():
+    ensure(rjust('gua', 5) == '  gua', 'rjust 测试 1')
+    ensure(rjust('guagua', 5) == 'guagua', 'rjust 测试 2')
+    ensure(rjust('gua', 5, '*') == '**gua', 'rjust 测试 3')
+
+
+
+#作业3
+def n_char(n, char = '0'):
+    return char * n
+
+
+def ljust(s, width, fillchar=' '):
+    length = len(s)
+    if length >= width:
+        return s
+    fill_len = width - length
+    return s + n_char(fill_len, fillchar)
+
+
+# 测试函数
+def test_ljust():
+    ensure(ljust('gua', 5) == 'gua  ', 'ljust 测试 1')
+    ensure(ljust('guagua', 5) == 'guagua', 'ljust 测试 2')
+    ensure(ljust('gua', 5, '*') == 'gua**', 'ljust 测试 3')
+
+
+#作业4
+def center(s, width, fillchar=' '):
+    length = len(s)
+    if length >= width:
+        return s
+    fill_len_all = width - length
+    fill_len_left = fill_len_all // 2
+    fill_len_right = fill_len_all - fill_len_left 
+    return n_char(fill_len_left, fillchar) + s + n_char(fill_len_right, fillchar)
+
+
+# 测试函数
+def test_center():
+    ensure(center('gua', 5) == ' gua ', 'center 测试 1')
+    ensure(center('gua', 5, '*') == '*gua*', 'center 测试 2')
+    ensure(center('gw', 5) == ' gw  ', 'center 测试 3')
+    ensure(center('gua', 6) == ' gua  ', 'center 测试 4')
+
+
+#作业5
+def is_space(s):
+        if s == '':
+            return False
+        for i in range(len(s)):
+            if s[i] != ' ':
+             return False
+        return True
+        
+
+
+# 测试函数
+def test_is_space():
+    ensure(is_space(' '), 'center 测试 1')
+    ensure(is_space('   '), 'center 测试 2')
+    ensure(not is_space(''), 'center 测试 3')
+    ensure(not is_space('gua'), 'center 测试 4')
+    ensure(not is_space('  gua'), 'center 测试 5')
+
+
+#作业6
+def is_digit(s):
+        if s == '':
+            return False
+        for i in range(len(s)):
+            if s[i] not in '0123456789':
+             return False
+        return True
+
+
+# 测试函数
+def test_is_digit():
+    ensure(is_digit('123'), 'is_digit 测试 1')
+    ensure(is_digit('0'), 'is_digit 测试 2')
+    ensure(not is_digit('  '), 'is_digit 测试 3')
+    ensure(not is_digit('1.1'), 'is_digit 测试 4')
+    ensure(not is_digit('gua'), 'is_digit 测试 5')
+    ensure(not is_digit(''), 'is_digit 测试 6')
+
+
+#作业7
+def strip_left(s):
+    if is_space(s):
+     return ''
+    for i in range(len(s)):
+     if s[i] != ' ':
+        return s[i:]
+    return s
+
+
+# 测试函数
+def test_strip_left():
+    ensure(strip_left('  gua') == 'gua', 'strip_left 测试 1')
+    ensure(strip_left(' gua  ') == 'gua  ', 'strip_left 测试 2')
+    ensure(strip_left('') == '', 'strip_left 测试 3')
+    ensure(strip_left('    ') == '', 'strip_left 测试 4')
+
+
+#作业8
+def strip_right(s):
+     if is_space(s):
+      return ''
+     for i in range(len(s)):
+         index = len(s) - i - 1
+         if s[index] != ' ':
+             return s[ :index + 1]
+     return s
+
+
+# 测试函数
+def test_strip_right():
+    ensure(strip_right('gua') == 'gua', 'strip_right 测试 1')
+    ensure(strip_right(' gua  ') == ' gua', 'strip_right 测试 2')
+    ensure(strip_right('') == '', 'strip_right 测试 3')
+    ensure(strip_right('    ') == '', 'strip_right 测试 4')
+
+
+#作业9
+def strip(s):
+    result = strip_left(s)
+    result = strip_right(result)
+    return result
+
+
+# 测试函数
+def test_strip():
+    ensure(strip('  gua') == 'gua', 'strip 测试 1')
+    ensure(strip(' gua  ') == 'gua', 'strip 测试 2')
+    ensure(strip('') == '', 'strip 测试 3')
+    ensure(strip('    ') == '', 'strip 测试 4')
+
+
+#作业10
+def replace(s, old_str, new_str):
+    index = s.find(old_str)
+    before = s[:index]
+    after = s[index + len(old_str):]
+    return before + new_str + after
+
+
+#测试函数
+def test_replace():
+      ensure(replace('hello world', 'world', 'gua') == 'hello gua', 'replace 测试 1')
+      ensure(replace('hello', 'he', 'wo') == 'wollo', 'replace 测试 2')
+
+
+# ==================== 主程序入口 ====================
+
+
+def main():
+    """
+    作业5主函数 - 运行所有测试
+    """
+    log('========== 开始测试作业5所有函数 ==========\n')
+
+#1
+log('测试作业 1 - zfill 函数:')
+test_zfill()
+log('zfill 测试通过\n')
+
+#2
+log('测试作业 2 - rjust 函数:')
+test_rjust()
+log('rjust 测试通过\n')
+
+#3
+log('测试作业 3 - ljust 函数:')
+test_rjust()
+log('ljust 测试通过\n')
+
+#4
+log('测试作业 4 - center 函数:')
+test_center()
+log('center 测试通过\n')
+
+#5
+log('测试作业 5 - is_space 函数:')
+test_is_space()
+log('is_space 测试通过\n')
+
+
+#6
+log('测试作业 6 - is_digit 函数:')
+test_is_digit()
+log('is_digit 测试通过\n')
+
+#7
+log('测试作业 7 - strip_left 函数:')
+test_strip_left()
+log('strip_left 测试通过\n')
+
+#8
+log('测试作业 8 - strip_right 函数:')
+test_strip_right()
+log('strip_right 测试通过\n')
+
+#9
+log('测试作业 9 - strip 函数:')
+test_strip()
+log('strip 测试通过\n')
+
+#10
+log('测试作业 10 - replace 函数:')
+test_replace()
+log('replace 测试通过\n')
+
+
+
+
+log('========== 所有测试完成 ==========')
+
+
+if __name__ == "__main__":
+    main()
